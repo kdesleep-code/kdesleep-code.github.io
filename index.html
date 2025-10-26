@@ -1,1 +1,205 @@
-test
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Kazumasa HORIE | Center for Computational Sciences, University of Tsukuba</title>
+  <meta name="description" content="Dr. Kazumasa HORIE — Assistant Professor, Center for Computational Sciences (CCS), University of Tsukuba. Biological Information Processing, EEG/EMG, AI (SDNN, CNN), distributed representation." />
+
+  <!-- Minimal, readable styling (no external deps) -->
+  <style>
+    :root {
+      --fg: #0f172a;       /* slate-900 */
+      --muted: #475569;    /* slate-600 */
+      --bg: #ffffff;
+      --link: #0ea5e9;     /* sky-500 */
+      --accent: #0284c7;   /* sky-600 */
+      --ring: #e2e8f0;     /* slate-200 */
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; background: var(--bg); color: var(--fg); font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", "Meiryo", Arial, sans-serif; line-height: 1.6; }
+    a { color: var(--link); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    header {
+      position: sticky; top: 0; z-index: 20;
+      backdrop-filter: blur(6px);
+      background: color-mix(in oklab, var(--bg) 85%, white);
+      border-bottom: 1px solid var(--ring);
+    }
+    .container { width: min(1100px, 92vw); margin: 0 auto; padding: 0 1rem; }
+    .nav { display: flex; align-items: center; justify-content: space-between; padding: .85rem 0; }
+    .brand { font-weight: 700; letter-spacing: .3px; }
+    .menu { display: flex; gap: 1rem; font-size: .95rem; }
+    .menu a { padding: .35rem .55rem; border-radius: .6rem; }
+    .menu a:hover { background: var(--ring); text-decoration: none; }
+
+    .hero { padding: 4.5rem 0 2rem; }
+    .hero h1 { font-size: clamp(1.8rem, 3.5vw, 2.4rem); margin: 0 0 .4rem; }
+    .subtitle { color: var(--muted); margin: 0 0 1.25rem; }
+    .grid { display: grid; gap: 1.2rem; grid-template-columns: repeat(12, 1fr); }
+    .card {
+      grid-column: span 12;
+      border: 1px solid var(--ring);
+      border-radius: 1rem;
+      padding: 1.2rem 1.2rem 1rem;
+      background: white;
+    }
+    .card h2 { font-size: 1.2rem; margin: 0 0 .6rem; }
+    .list { margin: .25rem 0 0; padding-left: 1.2rem; }
+    .muted { color: var(--muted); }
+    .two-col { display: grid; grid-template-columns: 1fr; gap: 1rem; }
+    @media (min-width: 860px) {
+      .two-col { grid-template-columns: 1.2fr .8fr; }
+    }
+    footer {
+      margin-top: 2.5rem; padding: 1.25rem 0 2.5rem;
+      border-top: 1px solid var(--ring); color: var(--muted); font-size: .95rem;
+    }
+    .pill {
+      display: inline-block; border: 1px solid var(--ring); padding: .2rem .55rem;
+      border-radius: 999px; font-size: .85rem; color: var(--muted);
+    }
+    .kicker { text-transform: uppercase; letter-spacing: .12em; font-size: .72rem; color: var(--accent); font-weight: 700; }
+    .section-actions { margin-top: .75rem; display: flex; gap: .6rem; flex-wrap: wrap; }
+    .btn {
+      display: inline-block; padding: .5rem .8rem; border-radius: .6rem; border: 1px solid var(--ring);
+      background: #f8fafc; color: var(--fg); text-decoration: none; font-size: .95rem;
+    }
+    .btn:hover { background: #eef2f7; text-decoration: none; }
+  </style>
+</head>
+<body>
+  <!-- Top Nav -->
+  <header>
+    <div class="container nav">
+      <div class="brand">Kazumasa HORIE</div>
+      <nav class="menu" aria-label="Primary">
+        <!-- これらは後で実体ページを作るなら、resume.html / publications.html / library.html に差し替え可 -->
+        <a href="#about">Home</a>
+        <a href="#resume">Resume</a>
+        <a href="#publications">Publication &amp; Award</a>
+        <a href="#library">BIPL-SDNN Library</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Hero -->
+    <section class="hero">
+      <p class="kicker">Assistant Professor • University of Tsukuba</p>
+      <h1 id="top">Kazumasa HORIE</h1>
+      <p class="subtitle">Center for Computational Sciences (CCS), University of Tsukuba</p>
+      <div class="section-actions">
+        <!-- 将来、PDFや外部プロフィールに差し替え可 -->
+        <a class="btn" href="#contact">Contact</a>
+        <a class="btn" href="#research">Research Interest</a>
+      </div>
+    </section>
+
+    <!-- Two-column: About / Quick links -->
+    <section class="grid two-col" id="about" aria-label="About">
+      <article class="card">
+        <h2>About</h2>
+        <p><strong>Dr. Kazumasa HORIE</strong></p>
+        <ul class="list">
+          <li>An Assistant Professor of Center for Computational Sciences, University of Tsukuba. (<a href="https://www.coins.tsukuba.ac.jp/" target="_blank" rel="noopener">College of Information Sciences</a>)</li>
+          <li>A Member of
+            <ul class="list">
+              <li><a href="https://www.ieice.org/" target="_blank" rel="noopener">The Institute of Electronics, Information and Communication Engineers (IEICE)</a></li>
+              <li><a href="https://www.ipsj.or.jp/" target="_blank" rel="noopener">Information Processing Society of Japan (IPSJ)</a></li>
+              <li>IEEE</li>
+            </ul>
+          </li>
+          <li>Belonging to
+            <ul class="list">
+              <li><a href="https://kde.cs.tsukuba.ac.jp/" target="_blank" rel="noopener">Kitagawa &amp; Amagasa Data Engineering Lab</a></li>
+              <li><a href="https://volga.esys.tsukuba.ac.jp/" target="_blank" rel="noopener">Biological Information Processing Lab</a></li>
+            </ul>
+          </li>
+        </ul>
+      </article>
+
+      <aside class="card" id="resume">
+        <h2>Resume <span class="pill">Outline</span></h2>
+        <p class="muted">This section is a placeholder. You can later replace it with a dedicated <code>resume.html</code> or a PDF link.</p>
+        <ul class="list">
+          <li>Position: Assistant Professor, CCS, University of Tsukuba</li>
+          <li>Fields: Biological Information Processing, AI</li>
+          <li>Keywords: EEG/EMG, SDNN, CNN, distributed representation</li>
+        </ul>
+        <p class="muted">Update these bullets as needed.</p>
+      </aside>
+    </section>
+
+    <!-- Research Interests -->
+    <section class="grid" id="research" aria-label="Research Interests" style="margin-top:1rem;">
+      <article class="card">
+        <h2>Research Interest</h2>
+        <ul class="list">
+          <li><strong>Biological Information Processing</strong>
+            <ul class="list">
+              <li>Electromyogram (EMG)</li>
+              <li>Electroencephalogram (EEG)</li>
+            </ul>
+          </li>
+          <li><strong>Artificial Intelligence</strong>
+            <ul class="list">
+              <li>Neural Networks
+                <ul class="list">
+                  <li>Selective Desensitization Neural Networks (SDNN)</li>
+                  <li>Convolutional Neural Networks (CNN)</li>
+                </ul>
+              </li>
+              <li>Distributed representation</li>
+            </ul>
+          </li>
+        </ul>
+      </article>
+    </section>
+
+    <!-- Publications & Awards -->
+    <section class="grid" id="publications" aria-label="Publication and Award" style="margin-top:1rem;">
+      <article class="card">
+        <h2>Publication &amp; Award</h2>
+        <p class="muted">Add your selected publications and awards here, or link to a dedicated <code>publications.html</code>.</p>
+        <ul class="list">
+          <li>Add featured papers (title, venue, year, DOI)</li>
+          <li>Add awards (title, org, year)</li>
+        </ul>
+      </article>
+    </section>
+
+    <!-- BIPL-SDNN Library -->
+    <section class="grid" id="library" aria-label="BIPL-SDNN Library" style="margin-top:1rem;">
+      <article class="card">
+        <h2>BIPL-SDNN Library</h2>
+        <p class="muted">Place your library resources, code links, or documentation here.</p>
+      </article>
+    </section>
+
+    <!-- Contact -->
+    <section class="grid" id="contact" aria-label="Contact" style="margin-top:1rem;">
+      <article class="card">
+        <h2>Contact</h2>
+        <address>
+          Center for Computational Sciences, Room 108<br />
+          University of Tsukuba<br />
+          Tennoudai 1-1-1, Tsukuba, Ibaraki, Japan 305-8573
+        </address>
+        <p>Email: <a href="mailto:horie@bipl-sdnn.org">horie@bipl-sdnn.org</a> / <a href="mailto:horie@cs.tsukuba.ac.jp">horie@cs.tsukuba.ac.jp</a></p>
+        <p class="muted">If you publish this on GitHub Pages later with a custom domain <code>bipl-sdnn.org</code>, these emails will still work as text links.</p>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div>&copy; <span id="y"></span> Kazumasa HORIE — University of Tsukuba</div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
