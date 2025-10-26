@@ -3,21 +3,25 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Kazumasa HORIE | Center for Computational Sciences, University of Tsukuba</title>
-  <meta name="description" content="Dr. Kazumasa HORIE — Assistant Professor, Center for Computational Sciences (CCS), University of Tsukuba. Biological Information Processing, EEG/EMG, AI (SDNN, CNN), distributed representation." />
+  <title>HORIE Kazumasa | Center for Computational Sciences, University of Tsukuba</title>
+  <meta name="description" content="Dr. HORIE Kazumasa — Assistant Professor, Center for Computational Sciences (CCS), University of Tsukuba. Biological Information Processing, EEG/EMG, AI (SDNN, CNN), distributed representation." />
 
-  <!-- Minimal, readable styling (no external deps) -->
   <style>
     :root {
-      --fg: #0f172a;       /* slate-900 */
-      --muted: #475569;    /* slate-600 */
+      --fg: #0f172a;
+      --muted: #475569;
       --bg: #ffffff;
-      --link: #0ea5e9;     /* sky-500 */
-      --accent: #0284c7;   /* sky-600 */
-      --ring: #e2e8f0;     /* slate-200 */
+      --link: #0ea5e9;
+      --accent: #0284c7;
+      --ring: #e2e8f0;
     }
     * { box-sizing: border-box; }
-    html, body { margin: 0; padding: 0; background: var(--bg); color: var(--fg); font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", "Meiryo", Arial, sans-serif; line-height: 1.6; }
+    html, body {
+      margin: 0; padding: 0;
+      background: var(--bg); color: var(--fg);
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", "Meiryo", Arial, sans-serif;
+      line-height: 1.6;
+    }
     a { color: var(--link); text-decoration: none; }
     a:hover { text-decoration: underline; }
     header {
@@ -33,9 +37,33 @@
     .menu a { padding: .35rem .55rem; border-radius: .6rem; }
     .menu a:hover { background: var(--ring); text-decoration: none; }
 
+    /* hero */
     .hero { padding: 4.5rem 0 2rem; }
-    .hero h1 { font-size: clamp(1.8rem, 3.5vw, 2.4rem); margin: 0 0 .4rem; }
-    .subtitle { color: var(--muted); margin: 0 0 1.25rem; }
+    .kicker {
+      text-transform: uppercase; letter-spacing: .12em;
+      font-size: .72rem; color: var(--accent); font-weight: 700;
+      margin: 0 0 .5rem;
+    }
+    .name-row {
+      display: flex; align-items: center; gap: .75rem;
+      flex-wrap: nowrap; /* ← 横並びを維持 */
+    }
+    .name-row h1 {
+      font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+      margin: 0;
+      white-space: nowrap; /* 名前の途中改行を防ぐ（任意） */
+    }
+    .name-row .avatar {
+      width: 72px; height: 72px;
+      border-radius: 50%; overflow: hidden;
+      border: 2px solid var(--ring); flex: 0 0 auto;
+    }
+    .name-row .avatar img {
+      width: 100%; height: 100%; object-fit: cover;
+      display: block;
+    }
+    .subtitle { color: var(--muted); margin: .6rem 0 1.25rem; }
+
     .grid { display: grid; gap: 1.2rem; grid-template-columns: repeat(12, 1fr); }
     .card {
       grid-column: span 12;
@@ -47,62 +75,60 @@
     .card h2 { font-size: 1.2rem; margin: 0 0 .6rem; }
     .list { margin: .25rem 0 0; padding-left: 1.2rem; }
     .muted { color: var(--muted); }
+
+    /* two-column layout */
     .two-col { display: grid; grid-template-columns: 1fr; gap: 1rem; }
     @media (min-width: 860px) {
-      .two-col { grid-template-columns: 1.2fr .8fr; }
+      .two-col {
+        grid-template-columns: minmax(520px, 2fr) minmax(420px, 1fr);
+        column-gap: 1.5rem;
+      }
+      .two-col .card { grid-column: auto; }
     }
+
     footer {
       margin-top: 2.5rem; padding: 1.25rem 0 2.5rem;
       border-top: 1px solid var(--ring); color: var(--muted); font-size: .95rem;
     }
-    .pill {
-      display: inline-block; border: 1px solid var(--ring); padding: .2rem .55rem;
-      border-radius: 999px; font-size: .85rem; color: var(--muted);
-    }
-    .kicker { text-transform: uppercase; letter-spacing: .12em; font-size: .72rem; color: var(--accent); font-weight: 700; }
-    .section-actions { margin-top: .75rem; display: flex; gap: .6rem; flex-wrap: wrap; }
-    .btn {
-      display: inline-block; padding: .5rem .8rem; border-radius: .6rem; border: 1px solid var(--ring);
-      background: #f8fafc; color: var(--fg); text-decoration: none; font-size: .95rem;
-    }
-    .btn:hover { background: #eef2f7; text-decoration: none; }
   </style>
 </head>
 <body>
-  <!-- Top Nav -->
   <header>
     <div class="container nav">
-      <div class="brand">Kazumasa HORIE</div>
+      <div class="brand">HORIE Kazumasa</div>
       <nav class="menu" aria-label="Primary">
-        <!-- これらは後で実体ページを作るなら、resume.html / publications.html / library.html に差し替え可 -->
-        <a href="#about">Home</a>
-        <a href="#resume">Resume</a>
-        <a href="#publications">Publication &amp; Award</a>
-        <!-- <a href="#library">BIPL-SDNN Library</a> -->
+        <a href="#top">Home</a>
+        <a href="https://trios.tsukuba.ac.jp/en/researcher/0000004146">Paper/Awards</a>
+        <a href="https://github.com/KDE-Sleep">KDE-Sleep</a>
+        <a href="https://github.com/kdesleep-code">Github</a>
       </nav>
     </div>
   </header>
 
   <main class="container">
-    <!-- Hero -->
     <section class="hero">
       <p class="kicker">Assistant Professor • University of Tsukuba</p>
-      <h1 id="top">Kazumasa HORIE</h1>
-      <p class="subtitle">Center for Computational Sciences (CCS), University of Tsukuba</p>
-      <div class="section-actions">
-        <!-- 将来、PDFや外部プロフィールに差し替え可 -->
-        <a class="btn" href="#contact">Contact</a>
-        <a class="btn" href="#research">Research Interest</a>
+
+      <div class="name-row">
+        <h1 id="top">HORIE Kazumasa</h1>
+        <span class="avatar">
+          <img src="horie-web.jpg" alt="HORIE Kazumasa portrait">
+        </span>
       </div>
+
+      <p class="subtitle">
+        <a href="https://www.ccs.tsukuba.ac.jp/eng/">Center for Computational Sciences (CCS)</a>,
+        <a href="https://www.tsukuba.ac.jp/en/">University of Tsukuba</a>
+      </p>
     </section>
 
-    <!-- Two-column: About / Quick links -->
-    <section class="grid two-col" id="about" aria-label="About">
+    <!-- About -->
+    <section class="grid" id="about" aria-label="About">
       <article class="card">
         <h2>About</h2>
-        <p><strong>Dr. Kazumasa HORIE</strong></p>
+        <p><strong>Dr. HORIE Kazumasa</strong></p>
         <ul class="list">
-          <li>An Assistant Professor of Center for Computational Sciences, University of Tsukuba. (<a href="https://www.coins.tsukuba.ac.jp/" target="_blank" rel="noopener">College of Information Sciences</a>)</li>
+          <li>An Assistant Professor of Center for Computational Sciences, University of Tsukuba.</li>
           <li>A Member of
             <ul class="list">
               <li><a href="https://www.ieice.org/" target="_blank" rel="noopener">The Institute of Electronics, Information and Communication Engineers (IEICE)</a></li>
@@ -110,60 +136,110 @@
               <li>IEEE</li>
             </ul>
           </li>
-          <li>Belonging to
+          <li> A Faculty Member in
             <ul class="list">
-              <li><a href="https://kde.cs.tsukuba.ac.jp/" target="_blank" rel="noopener">Kitagawa &amp; Amagasa Data Engineering Lab</a></li>
-              <li><a href="https://volga.esys.tsukuba.ac.jp/" target="_blank" rel="noopener">Biological Information Processing Lab</a></li>
+              <li><a href="https://kde.cs.tsukuba.ac.jp/" target="_blank" rel="noopener">Knowledge &amp; Data Engineering Lab</a></li>
             </ul>
           </li>
         </ul>
       </article>
-      
-    <!-- Research Interests -->
-    <section class="grid" id="research" aria-label="Research Interests" style="margin-top:1rem;">
-      <article class="card">
+    </section>
+
+    <!-- Research + Contact -->
+    <section class="grid two-col" aria-label="Research and Contact" style="margin-top:1rem;">
+      <article class="card" id="research">
         <h2>Research Interest</h2>
         <ul class="list">
-          <li><strong>Biological Information Processing</strong>
+          <li><strong>Automated Diagnosis</strong>
             <ul class="list">
-              <li>Electromyogram (EMG)</li>
-              <li>Electroencephalogram (EEG)</li>
+              <li>Automated Sleep Stage Scoring</li>
+              <li>Neurological Disease Screening</li>
+              <li>Medical-Report Generation</li>
             </ul>
           </li>
           <li><strong>Artificial Intelligence</strong>
             <ul class="list">
-              <li>Neural Networks
-                <ul class="list">
-                  <li>Selective Desensitization Neural Networks (SDNN)</li>
-                  <li>Convolutional Neural Networks (CNN)</li>
-                </ul>
-              </li>
-              <li>Distributed representation</li>
+              <li>Deep Learning</li>
+              <li>Latent Representation</li>
+              <li>Explainable AI</li>
+              <li>Interpretability</li>
             </ul>
+          </li>
+          <li><strong>Biological Signal Processing</strong>
+            <ul class="list">
+              <li>EEG, EOG, EMG ,,,</li>
+              <li>etc.</li>
+	    </ul>
           </li>
         </ul>
       </article>
-    </section>
 
-    <!-- Contact -->
-    <section class="grid" id="contact" aria-label="Contact" style="margin-top:1rem;">
-      <article class="card">
+      <article class="card" id="contact">
         <h2>Contact</h2>
         <address>
           Center for Computational Sciences, Room 108<br />
           University of Tsukuba<br />
-          Tennoudai 1-1-1, Tsukuba, Ibaraki, Japan 305-8573
+          Tennoudai 1-1-1, Tsukuba, Ibaraki, Japan 305-8577
         </address>
-        <p>Email: horie[at]bipl-sdnn.org / horie[at]cs.tsukuba.ac.jp</p>
+        <p>Email: <br />horie[at]bipl-sdnn.org / <br />horie[at]cs.tsukuba.ac.jp</p>
         <p class="muted">Please replace [at] with @.</p>
-        <!-- <p class="muted">If you publish this on GitHub Pages later with a custom domain <code>bipl-sdnn.org</code>, these emails will still work as text links.</p> -->
       </article>
     </section>
+
+
+    <!-- Selected Publications -->
+    <section class="grid" aria-label="Selected Publications">
+      <article class="card">
+        <h2>Selected Publications</h2>
+        <ul class="list">
+          <li><a href="https://www.nature.com/articles/s41598-024-72612-8">An ensemble method for improving robustness against the electrode contact problems in automated sleep stage scoring</a></li>
+          <li><a href="https://www.nature.com/articles/s41598-022-16334-9">Automated sleep stage scoring employing a reasoning mechanism and evaluation of its explainability</a></li>
+          <li><a href="https://www.nature.com/articles/s41598-019-51269-8">MC-SleepNet: Large-scale Sleep Stage Scoring in Mice by Deep Neural Networks</a></li>
+        </ul>
+      </article>
+    </section>
+
+    <!-- Selected Collaborators -->
+    <section class="grid" aria-label="Collaborators (selected)">
+      <article class="card">
+        <h2>Collaborators (selected)</h2>
+        <ul class="list">
+          <li>Prof. KITAGAWA Hiroyuki (IIIS, University of Tsukuba)</li>
+          <li>Prof. AMAGASA Toshiyuki (CCS, University of Tsukuba)</li>
+          <li>Prof. YANAGISAWA Masashi (IIIS, University of Tsukuba)</li>
+          <li><a href="https://lig-membres.imag.fr/lalanda/">Prof. Philippe LALANDA (University Grenoble-Alpes)</a></li>
+          <li><a href="https://www.suimin.co.jp/">S'UIMIN inc.</a></li>
+          <li>and others</li>
+        </ul>
+      </article>
+    </section>
+
+    <!-- Resume -->
+    <section class="grid" aria-label="Resume">
+      <article class="card">
+        <h2>Resume</h2>
+        <p><strong>Education</strong></p>
+        <ul class="list">
+          <li>Ph.D. in Engineering (Apr., 2014 - Mar., 2017)</br>Graduate school of Systems and Information Engineering, University of Tsukuba.</li>
+          <li>Master in Engineering (Apr., 2012 - Mar., 2014)</br>Graduate school of Systems and Information Engineering, University of Tsukuba.</li>
+          <li>Bachelor in Engineering (Apr., 2008 - Mar., 2012)</br>College of Engineering Systems, University of Tsukuba.</li>
+        </ul>
+        <p><strong>Work Experience</strong></p>
+        <ul class="list">
+          <li>Apr., 2018 - Present: Assistant Professor, Center for Computational Sciences, University of Tsukuba.</li>
+          <li>Jun., 2017 - Mar., 2018: Researcher (Non-Full-time), Center for Computational Sciences, University of Tsukuba.</li>
+          <li>Apr., 2017 - Jun., 2017: Postdoctoral Fellow, Faculty of Engineering, Information and Systems, University of Tsukuba.</li>
+          <li>Apr., 2017 - Mar., 2018: Part-time teacher, Department of Sociology, Hosei University.</li>
+          <li>Apr., 2016 - Mar., 2018: Part-time teacher, Department of Computer Science, Tokyo University of Engineering.</li>
+        </ul>
+      </article>
+    </section>
+
   </main>
 
   <footer>
     <div class="container">
-      <div>&copy; <span id="y"></span> Kazumasa HORIE — University of Tsukuba</div>
+      <div>&copy; <span id="y"></span> HORIE Kazumasa — University of Tsukuba</div>
     </div>
   </footer>
 
